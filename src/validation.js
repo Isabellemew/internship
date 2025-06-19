@@ -31,6 +31,6 @@ export function validateEmail(email) {
 }
 
 export function validatePhone(phone) {
-  const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+  const phoneRegex = /^\+\d{10,15}$/;
   return phoneRegex.test(phone);
 } 

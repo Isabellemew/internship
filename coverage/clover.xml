@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750332883705" clover="3.2.0">
-  <project timestamp="1750332883706" name="All files">
+<coverage generated="1750333106655" clover="3.2.0">
+  <project timestamp="1750333106655" name="All files">
     <metrics statements="19" coveredstatements="14" conditionals="23" coveredconditionals="17" methods="4" coveredmethods="3" elements="46" coveredelements="34" complexity="0" loc="19" ncloc="19" packages="1" files="1" classes="1"/>
     <file name="validation.js" path="C:\Users\User\Desktop\interm\src\validation.js">
       <metrics statements="19" coveredstatements="14" conditionals="23" coveredconditionals="17" methods="4" coveredmethods="3"/>
