@@ -23,4 +23,14 @@ export function validateContractData(data) {
 
 export function validateFinancialField(value) {
   return !isNaN(value) && parseFloat(value) > 0;
+}
+
+export function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+export function validatePhone(phone) {
+  const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+  return phoneRegex.test(phone);
 } 

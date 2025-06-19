@@ -14,35 +14,25 @@ class Contract {
     this.type = type;
     this.createdAt = new Date();
   }
-
-  // Валидация дат
   validateDates() {
     return this.endDate > this.startDate;
   }
-
-  // Определение статуса на основе текущей даты
   calculateStatus() {
     const now = new Date();
     if (now < this.startDate) return 'pending';
     if (now > this.endDate) return 'expired';
     return 'active';
   }
-
-  // Форматирование суммы
   formatAmount() {
     return new Intl.NumberFormat('ru-RU', {
       style: 'currency',
       currency: 'KZT'
     }).format(this.amount);
   }
-
-  // Форматирование даты
   formatDate(date) {
     return date.toLocaleDateString('ru-RU');
   }
 }
-
-// Наследование - специализированный класс для аренды
 class RentalContract extends Contract {
   constructor(id, number, clientName, startDate, endDate, amount, status, monthlyRent) {
     super(id, number, clientName, startDate, endDate, amount, status, 'rental');
@@ -73,15 +63,10 @@ class Client {
     return phoneRegex.test(this.phone);
   }
 }
-
-// Функции для работы с коллекциями данных
 const ContractManager = {
-  // Фильтрация по статусу
   filterByStatus: (contracts, status) => {
     return contracts.filter(contract => contract.status === status);
   },
-
-  // Поиск по номеру или клиенту
   searchContracts: (contracts, searchTerm) => {
     const term = searchTerm.toLowerCase();
     return contracts.filter(contract => 
@@ -89,8 +74,6 @@ const ContractManager = {
       contract.clientName.toLowerCase().includes(term)
     );
   },
-
-  // Сортировка
   sortContracts: (contracts, field, order = 'asc') => {
     return [...contracts].sort((a, b) => {
       let aVal = a[field];
